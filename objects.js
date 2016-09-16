@@ -149,13 +149,20 @@ printProcessedOrders(arrayOfObjects);
     # Addition with an object
         Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
 
-        Declare a new function named objectAddition. Declare the first parameter, which will be an object. Within this function, you will access the values stored `a` and `b` of the object being passed in. Add the these values and store the sum to this object's `result` property. This function will return the object.
+        Declare a new function named objectAddition. Declare the first parameter, which will be an object. Within this function, you will access the values stored `a` and `b` of the object being passed in. Add these values and store the sum to this object's `result` property. This function will return the object.
 
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` to inspect your results.
 
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
+var sumObj = {a: 12, b:11, result: "undefeezie"};
+function objectAddition(firstObj){
+    firstObj.result = (firstObj.a + firstObj.b);
+    return firstObj;
+}
 
+var sumObjResult = objectAddition(sumObj);
+console.log(sumObjResult);
 
 /*
     # Print sum function and add as new key-value
@@ -170,8 +177,12 @@ printProcessedOrders(arrayOfObjects);
 
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
-
-
+function printObj(firstObj){
+    firstObj.output = (firstObj.a + " + " + firstObj.b + " = " + objectAddition(firstObj));
+    console.log(firstObj.output);
+    return  firstObj.output;
+}
+printObj(sumObj);
 /*
     # Putting stuff in `plainBox`
         Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
