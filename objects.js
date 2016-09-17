@@ -265,8 +265,8 @@ console.log(stockCarWithDriver);
  var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
  function addPassengers(vehicle,nombre,uteranAnniversary){
  for (var i=0; i<nombre.length; i++){
-     var newPlainPerson = {};
-    vehicle.passengers.push(buildPerson(newPlainPerson, nombre[i], uteranAnniversary[i]));
+     var shittyDriver = {};
+    vehicle.passengers.push(buildPerson(shittyDriver, nombre[i], uteranAnniversary[i]));
  }
  return vehicle;
  }
@@ -277,5 +277,5 @@ function displayPassengers(hotRod){
         console.log(hotRod.passengers[i].name + ", age " + hotRod.passengers[i].age + ", is a terrible driver and should never be allowed behind a wheel!");
     }
 }
-console.log(displayPassengers(stockCar));
+displayPassengers(stockCar);
 
