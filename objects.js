@@ -178,39 +178,57 @@ console.log(sumObjResult);
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
 function printObj(firstObj){
-    firstObj.output = (firstObj.a + " + " + firstObj.b + " = " + objectAddition(firstObj));
-    console.log(firstObj.output);
-    return  firstObj.output;
-}
-printObj(sumObj);
+    return firstObj.a + " + " + firstObj.b + " = " + firstObj.result;
+    }
+console.log(printObj(sumObj));
 /*
     # Putting stuff in `plainBox`
         Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
 
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
+ function putInPlainBox(obj){
+    for (var i=0; i<10; i++){
+       obj.contents.push(Math.floor(Math.random([i])*100));
+    }
+    return  obj.contents;
+ }
+var plainBoxResult = putInPlainBox(plainBox);
+console.log(plainBoxResult);
 
 
 /*
     # Detecting transmission
         Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
 
-        If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
+        If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when its false.
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
-
+function detectingTransmission(objact){
+    if (objact.automaticTransmission === true){
+        return "Automatic? So Easy even blondes can do it!";
+    }
+    else {
+        return "Manual? Do they call it that because it's literally manual labor to use?";
+    }
+}
+console.log(detectingTransmission(stockCar));
 
 /*
     # Who's driving this thing?!
         As you may have noticed that the `stockCar` doesn't have a driver!
 
-        Declare a function named addDriver with two parameters. The first parameter will be an object with represents a **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the second parameter being passed into your function.
+        Declare a function named addDriver with two parameters. The first parameter will be an object which represents a **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the second parameter being passed into your function.
 
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect your results. Consider using `plainPerson` as your driver.
  */
-
-
+function addDriver(oneCarBrah,oneDrivahBrah){
+    oneCarBrah.driver = oneDrivahBrah;
+    return oneCarBrah;
+}
+var stockCarWithDriver = addDriver(stockCar,plainPerson);
+console.log(stockCarWithDriver);
 /*
     # Final Boss
     The Dev League instructors want to ride your whip!
@@ -230,7 +248,7 @@ printObj(sumObj);
     Example of a loaded Car:
 
     # Display passengers
-        Delcare a function named `displayPassengers` and set one parameter which will be a **car**. This function should print out each passenger's name and age one line at a time.
+        Declare a function named `displayPassengers` and set one parameter which will be a **car**. This function should print out each passenger's name and age one line at a time.
 
     example output:
         'Jon, age 19, is riding dirty!'
@@ -243,4 +261,21 @@ printObj(sumObj);
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+ var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+ var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+ function addPassengers(vehicle,nombre,uteranAnniversary){
+ for (var i=0; i<nombre.length; i++){
+     var newPlainPerson = {};
+    vehicle.passengers.push(buildPerson(newPlainPerson, nombre[i], uteranAnniversary[i]));
+ }
+ return vehicle;
+ }
+console.log(addPassengers(stockCar,passengerList,passengerAges));
+
+function displayPassengers(hotRod){
+    for (var i=0; i<hotRod.passengers.length; i++){
+        console.log(hotRod.passengers[i].name + ", age " + hotRod.passengers[i].age + ", is a terrible driver and should never be allowed behind a wheel!");
+    }
+}
+console.log(displayPassengers(stockCar));
 
