@@ -262,7 +262,7 @@ console.log(stockCarWithDriver);
         'Victor, age 19, is riding dirty!'
  */
  var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
- var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+ var passengerAges = [9, 12, 15, 13, 11, 9, 5, 10, 3];
  function addPassengers(vehicle,nombre,uteranAnniversary){
  for (var i=0; i<nombre.length; i++){
      var shittyDriver = {};
@@ -274,7 +274,7 @@ console.log(addPassengers(stockCar,passengerList,passengerAges));
 
 function displayPassengers(hotRod){
     for (var i=0; i<hotRod.passengers.length; i++){
-        console.log(hotRod.passengers[i].name + ", age " + hotRod.passengers[i].age + ", is a terrible driver and should never be allowed behind a wheel!");
+        console.log(hotRod.passengers[i].name + ", age " + hotRod.passengers[i].age + ", isn't even old enough to be allowed behind a wheel!");
     }
 }
 displayPassengers(stockCar);
